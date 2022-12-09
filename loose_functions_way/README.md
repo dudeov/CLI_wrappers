@@ -25,5 +25,16 @@ Then we fetch the function name in the `executor` as `args.function_name`
 And then run the function from the global scope with the same name:
 ```
 handler: Callable = globals()[args.function_name]
-handler()
+handler(args.path_str)
+```
+
+Usage:
+```
+% python run_cli.py list_python_files
+/Users/aleksei.chuvakov/workplace/CLI_wrappers/argparse_way/run_cli.py
+/Users/aleksei.chuvakov/workplace/CLI_wrappers/argparse_way/executor.py
+/Users/aleksei.chuvakov/workplace/CLI_wrappers/loose_functions_way/run_cli.py
+/Users/aleksei.chuvakov/workplace/CLI_wrappers/loose_functions_way/executor.py
+/Users/aleksei.chuvakov/workplace/CLI_wrappers/class_way/run_cli.py
+/Users/aleksei.chuvakov/workplace/CLI_wrappers/class_way/executor.py
 ```

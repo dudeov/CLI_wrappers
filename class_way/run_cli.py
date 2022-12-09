@@ -10,6 +10,7 @@ def parse_args(cmdline: str = None) -> argparse.Namespace:
         dest="path_str",
         default="/Users/aleksei.chuvakov/workplace/CLI_wrappers"
     )
+
     subparsers = parser.add_subparsers(
         help="this is a set of positional sub-arguments",
         dest="function_name"
@@ -36,7 +37,8 @@ def parse_args(cmdline: str = None) -> argparse.Namespace:
     return args
 
 def main(args: argparse.Namespace) -> None:
-    executor.main(args)
+    runner = executor.ListFiles(args)
+    runner.run()
 
 if __name__ == "__main__":
     main(parse_args())
